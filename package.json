@@ -9,8 +9,19 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/mdx": "^4.2.1",
+    "@astrojs/rss": "^4.0.11",
+    "@astrojs/sitemap": "^3.3.0",
+    "@astrojs/solid-js": "^5.0.5",
+    "@astrojs/ts-plugin": "^1.10.4",
+    "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.0.14",
     "astro": "^5.5.3",
+    "clsx": "^2.1.1",
+    "fuse.js": "^7.1.0",
+    "sharp": "^0.33.5",
+    "tailwind-merge": "^3.0.2",
     "tailwindcss": "^4.0.14"
   }
 }
