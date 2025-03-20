@@ -1,6 +1,6 @@
 ---
 company: "CK Technology Services"
-role: "Hedge Fund IT Consultant"
+role: "Hedge Fund IT Consultant - London, UK"
 dateStart: "01/01/2020"
 dateEnd: "02/01/2021"
 ---

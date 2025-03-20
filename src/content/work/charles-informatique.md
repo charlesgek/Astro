@@ -1,6 +1,6 @@
 ---
 company: "Charles Informatique"
-role: "IT Consultant"
+role: "IT Consultant - Paris, France & London, UK"
 dateStart: "10/01/2008"
 dateEnd: "01/01/2020"
 ---

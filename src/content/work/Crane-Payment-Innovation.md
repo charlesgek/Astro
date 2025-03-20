@@ -1,6 +1,6 @@
 ---
 company: "Crane Payment Innovation"
-role: "IT Systems Engineer"
+role: "IT Systems Engineer - Shanghai, China"
 dateStart: "07/01/2023"
 dateEnd: "12/01/2024"
 ---

@@ -1,6 +1,6 @@
 ---
 company: "Euthenia Asset Management"
-role: "IT Team Leader"
+role: "IT Team Leader - London, UK"
 dateStart: "02/01/2021"
 dateEnd: "12/01/2022"
 ---
