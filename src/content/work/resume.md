@@ -7,7 +7,7 @@ dateEnd: "now"
 <center>
 <h1>Charles G. E. KALAYDJIAN</h1>
 <h4>VALID PRE-SETTLED STATUS | Infrastructure, Networking, Cloud and DevOps</h4>
-Canary Wharf, London | Mobile: Please use Contact form | Email: Please use Contact Form<br />
+Canary Wharf, London | Mobile: <a href=/contact>Please use Contact form</a> | Email: <a href=/contact>Please use Contact Form</a><br />
 <a href=https://www.linkedin.com/in/charles-kalaydjian/>https://www.linkedin.com/in/charles-kalaydjian/</a>
 </center>
 
