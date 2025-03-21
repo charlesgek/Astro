@@ -41,8 +41,7 @@ supporting secure, scalable global operations. Known for proactive problem-solvi
     <li>Version Control System
     </td>
   </tr>
-</table>
-</center>
+</table></center>
 
 ### Work History
 __IT Systems Engineer | 07/2023 - 12/2024__<br />
@@ -79,7 +78,7 @@ __Charles Informatique - Paris, France & London, UK__
 __Automation:__ Ansible, PowerShell, Terraform<br />
 __Cloud Platforms:__ Azure, AWS, GCP<br />
 __Networking:__ DNS, DHCP, VLANs, VPN, VOIP<br />
-__Operating Systems:__ Windows, Linux, Unix<br />
+__Operating Systems:__ Windows, Linux, Unix, BSD<br />
 __Security:__ Endpoint Security, Zero Trust, 2FA / MFA<br />
 __Storage & Backup:__ Cohesity, Delta Backup, NAS, VEEAM, ZFS<br />
 __Version Control System:__ Git<br />
