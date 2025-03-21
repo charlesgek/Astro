@@ -8,18 +8,9 @@ export const SITE: Site = {
 }
 
 // About / Resume Page
-export const SUMMARY: Page = {
-  TITLE: "Professional Summary",
-}
-export const SKILLS: Page = {
-  TITLE: "Core Competencies",
-}
 export const WORK: Page = {
-  TITLE: "Work History",
+  TITLE: "Resume / CV",
   DESCRIPTION: "My Resume / CV",
-}
-export const EDUCATION: Page = {
-  TITLE: "Education",
 }
 
 // Blog Page
@@ -65,8 +56,8 @@ export const SOCIALS: Socials = [
   { 
     NAME: "Email",
     ICON: "email", 
-    TEXT: "contact@charlesgek.com",
-    HREF: "mailto:contact@charlesgek.com",
+    TEXT: "Contact Form coming soon",
+    HREF: "#",
   },
   { 
     NAME: "Github",
