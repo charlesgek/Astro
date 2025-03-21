@@ -1,15 +1,9 @@
 ---
 import { getCollection } from "astro:content"
 import PageLayout from "@layouts/PageLayout.astro"
-import Summary from "./summary.astro"
-import Skills from "./skills.astro"
 import Work from "./work.astro"
-import Education from "./education.astro"
 import { WORK } from "@consts"
 ---
 <PageLayout title={WORK.TITLE} description={WORK.DESCRIPTION}>
-<Summary />
-<Skills />
 <Work />
-<Education />
 </PageLayout>
