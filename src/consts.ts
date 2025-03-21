@@ -7,10 +7,19 @@ export const SITE: Site = {
   AUTHOR: "Charles G.E. KALAYDJIAN",
 }
 
-// Work Page
+// About / Resume Page
+export const SUMMARY: Page = {
+  TITLE: "Professional Summary",
+}
+export const SKILLS: Page = {
+  TITLE: "Core Competencies",
+}
 export const WORK: Page = {
-  TITLE: "Work",
-  DESCRIPTION: "Places I have worked.",
+  TITLE: "Work History",
+  DESCRIPTION: "My Resume / CV",
+}
+export const EDUCATION: Page = {
+  TITLE: "Education",
 }
 
 // Blog Page
@@ -38,8 +47,8 @@ export const LINKS: Links = [
     HREF: "/", 
   },
   { 
-    TEXT: "Work", 
-    HREF: "/work", 
+    TEXT: "About / Resume", 
+    HREF: "/about", 
   },
   { 
     TEXT: "Blog", 

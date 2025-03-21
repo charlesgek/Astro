@@ -10,6 +10,37 @@ const work = defineCollection({
   }),
 })
 
+const education = defineCollection({
+  type: "content",
+  schema: z.object({
+    university: z.string(),
+    major: z.string(),
+    dateStart: z.coerce.date(),
+    dateEnd: z.union([z.coerce.date(), z.string()]),
+  }),
+})
+
+const skills = defineCollection({
+  type: "content",
+  schema: z.object({
+    university: z.string(),
+    major: z.string(),
+    dateStart: z.coerce.date(),
+    dateEnd: z.union([z.coerce.date(), z.string()]),
+  }),
+})
+
+const summary = defineCollection({
+  type: "content",
+  schema: z.object({
+    university: z.string(),
+    major: z.string(),
+    dateStart: z.coerce.date(),
+    dateEnd: z.union([z.coerce.date(), z.string()]),
+  }),
+})
+
+
 const blog = defineCollection({
   type: "content",
   schema: z.object({
@@ -42,4 +73,4 @@ const legal = defineCollection({
   }),
 })
 
-export const collections = { work, blog, projects, legal }
+export const collections = { work, education, skills, summary, blog, projects, legal }

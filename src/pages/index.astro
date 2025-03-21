@@ -93,9 +93,26 @@ const stack = [
               Read my blog
             </a>
             <a href='/work' class='py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend'>
-              View my work
+              About / Resume
             </a>
           </div>
+          <br />
+          <div class="flex flex-wrap gap-1 items-center justify-center">
+            {
+              SOCIALS.map((SOCIAL) => (
+                <a 
+                  href={SOCIAL.HREF} 
+                  target="_blank" 
+                  aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`} 
+                  class="group size-10 rounded-full p-2 items-center justify-center hover:bg-black/5 dark:hover:bg-white/20  blend"
+                >
+                  <svg class="size-full fill-current group-hover:fill-black group-hover:dark:fill-white blend">
+                    <use href={`/social.svg#${SOCIAL.ICON}`} />
+                  </svg>
+                </a>
+              ))
+            }
+            </div>
         </div>
       </div>
     </div>
