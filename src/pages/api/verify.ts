@@ -10,7 +10,7 @@ export const POST: APIRoute = async ({ request }: APIContext) => {
 
     const turnstile_token = data.get("cf-turnstile-response");
 
-    if (!turnstile_token || !import.meta.env.TURNSTILE_SECRET_TOKEN) {
+    if (!turnstile_token || !import.meta.env.SECRET_TURNSTILE_SECRET_TOKEN) {
         return new Response(
             JSON.stringify({
                 status: "401 Unauthorized",
