@@ -52,6 +52,7 @@ const { title, description, image = "/open-graph.jpg" } = Astro.props
 <link rel="alternate" type="application/rss+xml" title={title} href={`${Astro.site}rss.xml`}/>
 
 <!-- Global Scripts -->
+<script async defer is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
 <script is:inline src="/js/theme.js"></script>
 <script is:inline src="/js/scroll.js"></script>
 <script is:inline src="/js/animate.js"></script>
