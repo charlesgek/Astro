@@ -1,0 +1,6 @@
+name = "charlesgek-com"
+compatibility_date = "2025-03-01"
+pages_build_output_dir = "dist"
+
+[vars]
+PUBLIC_TURNSTILE_SITE_KEY = "0x4AAAAAAASAYgSU4eUBrEgL"
