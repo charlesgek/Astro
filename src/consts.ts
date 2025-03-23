@@ -20,10 +20,10 @@ export const BLOG: Page = {
 }
 
 // Projects Page 
-//export const PROJECTS: Page = {
-//  TITLE: "Projects",
-//  DESCRIPTION: "Recent projects I have worked on.",
-//}
+export const PROJECTS: Page = {
+  TITLE: "Projects",
+  DESCRIPTION: "Recent projects I have worked on.",
+}
 
 // Search Page
 export const SEARCH: Page = {
