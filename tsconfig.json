@@ -29,3 +29,9 @@
     "node_modules"
   ]
 }
+
+{
+  "compilerOptions": {
+    "types": ["@cloudflare/workers-types"],
+  },
+}
