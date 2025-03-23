@@ -11,7 +11,7 @@ export default defineConfig({
   vite: {
       plugins: [tailwindcss()],
     },
-  site: "http://localhost:4321",
+  site: "https://charlesgek.com",
   integrations: [mdx(), sitemap(), solidJs()],
   output: "server",
   adapter: cloudflare({
