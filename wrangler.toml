@@ -4,4 +4,4 @@ pages_build_output_dir = "dist"
 
 [vars]
 PUBLIC_TURNSTILE_SITE_KEY = "0x4AAAAAAASAYgSU4eUBrEgL"
-NODE_VERSION = "v.23.10.0"
+NODE_VERSION = "v23.10.0"
