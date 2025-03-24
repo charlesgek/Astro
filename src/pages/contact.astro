@@ -60,23 +60,33 @@ import PageLayout from '@layouts/PageLayout.astro';
       </form>
       <script>
         document.getElementById('contact-form').addEventListener('submit', async (e) => {
-          e.preventDefault();
+          e.preventDefault(); // Prevent the default form submission
       
           // Serialize form data
           const formData = new FormData(e.target);
       
-          // Send the form data to your backend
-          const response = await fetch('/api/submit-form.js', {
-            method: 'POST',
-            body: formData,
-          });
+          try {
+            // Send the form data to your backend
+            const response = await fetch('/api/submit-form', {
+              method: 'POST',
+              body: formData,
+            });
       
-          const result = await response.json();
+            // Parse the JSON response
+            const result = await response.json();
       
-          if (result.success) {
-            alert('Form submitted successfully!');
-          } else {
-            alert(`Verification failed: ${result.message}`);
+            if (result.success) {
+              // Success: Notify the user and reset the form
+              alert('Form submitted successfully!');
+              e.target.reset(); // Clear the form fields
+            } else {
+              // Failure: Notify the user with the error message
+              alert(`Verification failed: ${result.message || 'Unknown error'}`);
+            }
+          } catch (error) {
+            // Handle network or other unexpected errors
+            console.error('Error submitting form:', error);
+            alert('An unexpected error occurred. Please try again later.');
           }
         });
       </script>
