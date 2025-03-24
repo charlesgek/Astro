@@ -54,6 +54,12 @@ security, and cost-efficiency.
 - Strengthened IT security by managing accounts and policies within Active Directory.
 - Integrated Azure, Entra, and Office 365 to improve global collaboration and scalability.
 
+__IT Consultant | 01/2023 - 06/2023__<br />
+__CK Technology Services - Hong Kong, Hong Kong__
+- Designed, implemented, and secured cloud infrastructure for a travel retail company specializing in duty-free, optimizing performance and compliance.
+- Developed scalable and resilient cloud architecture for an AI startup, enhancing model deployment and security.
+- Ensured best practices in cloud security, IAM, and automation across both projects, reducing operational risks and costs.
+
 __IT Team Leader | 02/2021 - 12/2022__<br />
 __Euthenia Asset Management - London, UK__  
 - Led the IT Team to maximum efficiency.
