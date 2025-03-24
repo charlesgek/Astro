@@ -1,5 +1,6 @@
 import type { APIRoute } from "astro";
 import type { APIContext } from "astro";
+export const prerender = false
 
 const turnstileURL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 
