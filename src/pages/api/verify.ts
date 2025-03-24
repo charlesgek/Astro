@@ -32,6 +32,9 @@ export async function POST({ request }: { request: Request }) {
     // Parse the response from Turnstile API
     const result: TurnstileResponse = await turnstileResponse.json();
 
+    // Log the result for debugging purposes
+    console.log('Turnstile API response:', result);
+
     // Check if the token is valid
     if (result.success) {
       return new Response(
@@ -40,12 +43,12 @@ export async function POST({ request }: { request: Request }) {
       );
     } else {
       // Log errors if needed
-      console.error('Turnstile verification failed:', result);
+      console.error('Turnstile verification failed. Error codes:', result['error-codes']);
       return new Response(
         JSON.stringify({
           success: false,
           message: 'Turnstile verification failed.',
-          errors: result['error-codes'],
+          errors: result['error-codes'], // Include error codes in the response
         }),
         { status: 400, headers: { 'Content-Type': 'application/json' } }
       );
