@@ -1,24 +1,28 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content"
-import PageLayout from "@layouts/PageLayout.astro"
-import TopLayout from "@layouts/TopLayout.astro"
-import BottomLayout from "@layouts/BottomLayout.astro"
-import ArticleTopLayout from "@layouts/ArticleTopLayout.astro"
-import ArticleBottomLayout from "@layouts/ArticleBottomLayout.astro"
+import { getCollection } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import TopLayout from "@layouts/TopLayout.astro";
+import BottomLayout from "@layouts/BottomLayout.astro";
+import ArticleTopLayout from "@layouts/ArticleTopLayout.astro";
+import ArticleBottomLayout from "@layouts/ArticleBottomLayout.astro";
 
-// Create the static projects pages
-export async function getStaticPaths() {
-	const projects = await getCollection("projects")
-	return projects.map((project) => ({
-		params: { slug: project.slug },
-		props: project,
-	}))
+// Get the slug from the URL
+const { slug } = Astro.params;
+
+// Fetch all projects from the "projects" collection
+const projects = await getCollection("projects");
+
+// Find the project that matches the slug
+const project = projects.find((p) => p.slug === slug);
+
+// Validate the project
+if (!project || !project.data) {
+  throw new Error(`No project found for slug: ${slug}`);
 }
 
-// Get the requested project
-type Props = CollectionEntry<"projects">
-const project = Astro.props
-const { title, summary } = project.data
+const { title, summary } = project.data;
+
+console.log("Project Data:", project.data); // Debugging
 ---
 
 <PageLayout title={title} description={summary}>
