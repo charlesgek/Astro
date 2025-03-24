@@ -12,14 +12,14 @@ export const POST: APIRoute = async ({ request }: APIContext) => {
         return new Response(
             JSON.stringify({
                 status: "401 Unauthorized",
-                message: "Please include TURNSTILE_SECRET_TOKEN in your .env file."
+                message: "Please include SECRET_TURNSTILE_SECRET_TOKEN in your environment variables."
             }),
             { status: 401 }
-        )
+        );
     }
 
     const formData = new FormData();
-    formData.append("secret", import.meta.env.TURNSTILE_SECRET_TOKEN);
+    formData.append("secret", import.meta.env.SECRET_TURNSTILE_SECRET_TOKEN);
     formData.append("response", turnstile_token);
 
     const result = await fetch(turnstileURL, {
@@ -42,7 +42,7 @@ export const POST: APIRoute = async ({ request }: APIContext) => {
     const name = data.get("name")?.toString();
     const message = data.get("message")?.toString();
 
-    if (!name && !message) {
+    if (!name || !message) {
         return new Response(
             JSON.stringify({
                 status: "400 Bad Request",
@@ -59,6 +59,7 @@ export const POST: APIRoute = async ({ request }: APIContext) => {
                 name,
                 message
             }
-        })
+        }),
+        { status: 200 }
     );
 };
