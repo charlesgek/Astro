@@ -38,7 +38,7 @@ export const POST = async ({ request }) => {
       // Check if the Turnstile token is valid
       if (!result.success) {
         return new Response(
-          JSON.stringify({ error: "Invalid Turnstile token. Please try again." }),
+          JSON.stringify({ success: false, message: "Invalid Turnstile token. Please try again." }),
           {
             status: 400,
             headers: { "Content-Type": "application/json" },
@@ -62,7 +62,7 @@ export const POST = async ({ request }) => {
   
       // Return an error response
       return new Response(
-        JSON.stringify({ error: "An unexpected error occurred." }),
+        JSON.stringify({ success: false, message: "An unexpected error occurred." }),
         {
           status: 500,
           headers: { "Content-Type": "application/json" },
