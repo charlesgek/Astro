@@ -55,7 +55,7 @@ security, and cost-efficiency.
 - Integrated Azure, Entra, and Office 365 to improve global collaboration and scalability.
 
 __IT Consultant | 01/2023 - 06/2023__<br />
-__CK Technology Services - Hong Kong, Hong Kong__
+__CK Technology Services - Hong Kong, Hong Kong SAR__
 - Designed, implemented, and secured cloud infrastructure for a travel retail company specializing in duty-free, optimizing performance and compliance.
 - Developed scalable and resilient cloud architecture for an AI startup, enhancing model deployment and security.
 - Ensured best practices in cloud security, IAM, and automation across both projects, reducing operational risks and costs.
