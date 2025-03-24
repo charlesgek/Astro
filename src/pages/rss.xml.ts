@@ -1,18 +1,24 @@
-import rss from "@astrojs/rss"
-import { getCollection } from "astro:content"
-import { SITE } from "@consts"
+import rss from "@astrojs/rss";
+import { getCollection } from "astro:content";
+import { SITE } from "@consts";
 
 type Context = {
-  site: string
-}
+  site: string;
+};
 
 export async function GET(context: Context) {
-	const posts = await getCollection("blog")
-  const projects = await getCollection("projects")
+  // Fetch blog and projects collections
+  const posts = await getCollection("blog");
+  const projects = await getCollection("projects");
 
-  const items = [...posts, ...projects]
+  // Combine the collections into a single array, adding a `type` property to distinguish them
+  const items = [
+    ...posts.map((post) => ({ ...post, type: "blog" })),
+    ...projects.map((project) => ({ ...project, type: "projects" })),
+  ];
 
-  items.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  // Sort items by date in descending order
+  items.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 
   return rss({
     title: SITE.TITLE,
@@ -22,9 +28,8 @@ export async function GET(context: Context) {
       title: item.data.title,
       description: item.data.summary,
       pubDate: item.data.date,
-      link: item.slug.startsWith("blog")
-        ? `/blog/${item.slug}/`
-        : `/projects/${item.slug}/`,
+      // Use the `type` property to determine the correct link structure
+      link: item.type === "blog" ? `/blog/${item.slug}/` : `/projects/${item.slug}/`,
     })),
-  })
+  });
 }
