@@ -1,5 +1,4 @@
 ---
-export const prerender = false
 import PageLayout from '@layouts/PageLayout.astro';
 ---
 
@@ -8,7 +7,7 @@ import PageLayout from '@layouts/PageLayout.astro';
     <div class="max-w-md w-full space-y-8">
       <h1 class="text-3xl font-bold text-center text-white-700">Contact Me</h1>
       <center>THIS FORM IS NOT ACTIVE YET ! PLEASE DO NOT USE !</center>
-      <form class=" rounded-lg shadow-md space-y-6" action="/api/verify" method="POST">
+      <form class=" rounded-lg shadow-md space-y-6" id="contact-form" method="POST">
         <!-- Name Field -->
         <div>
           <label for="name" class="block text-sm font-medium text-white-700">Name</label>
@@ -59,6 +58,28 @@ import PageLayout from '@layouts/PageLayout.astro';
           </button>
         </div>
       </form>
+      <script>
+        document.getElementById('contact-form').addEventListener('submit', async (e) => {
+          e.preventDefault();
+      
+          // Serialize form data
+          const formData = new FormData(e.target);
+      
+          // Send the form data to your backend
+          const response = await fetch('/api/verify', {
+            method: 'POST',
+            body: formData,
+          });
+      
+          const result = await response.json();
+      
+          if (result.success) {
+            alert('Form submitted successfully!');
+          } else {
+            alert(`Verification failed: ${result.message}`);
+          }
+        });
+      </script>
     </div>
   </div>
 </PageLayout>
