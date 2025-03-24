@@ -4,8 +4,10 @@ import type { APIContext } from "astro";
 const turnstileURL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 
 export const POST: APIRoute = async ({ request }: APIContext) => {
-    const data = await request.formData();
+    // Log environment variables for debugging
+    console.log("Environment Variables:", import.meta.env);
 
+    const data = await request.formData();
     const turnstile_token = data.get("cf-turnstile-response");
 
     if (!turnstile_token || !import.meta.env.SECRET_TURNSTILE_SECRET_TOKEN) {
