@@ -9,7 +9,7 @@ export const POST = async ({ request }) => {
       const token = formData.get("cf-turnstile-response");
   
       // Retrieve the secret key from the environment variable
-      const secretKey = import.meta.env.SECRET_TURNSTILE_SECRET_TOKEN;
+      const secretKey = process.env.SECRET_TURNSTILE_SECRET_TOKEN;
   
       if (!secretKey) {
         return new Response(
