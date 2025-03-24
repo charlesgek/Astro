@@ -2,7 +2,7 @@
 export const POST = async ({ request, env }) => {
     try {
       // Access the secret from the `env` object
-      const secretKey = env.SECRET_TURNSTILE_SECRET_TOKEN;
+      const secretKey = import.meta.env.SECRET_TURNSTILE_SECRET_TOKEN;
   
       console.log("Secret Key via env:", secretKey);
   

@@ -9,8 +9,11 @@ import cloudflare from "@astrojs/cloudflare";
 // https://astro.build/config
 export default defineConfig({
   vite: {
-      plugins: [tailwindcss()],
+    define: {
+      "process.env":process.env
     },
+    plugins: [tailwindcss()],
+  },
   site: "https://charlesgek.com",
   integrations: [mdx(), sitemap(), solidJs()],
   output: "server",
