@@ -5,80 +5,108 @@ import PageLayout from '@layouts/PageLayout.astro';
 <PageLayout>
   <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-md w-full space-y-8">
-      <h1 class="text-3xl font-bold text-center text-white-700">Contact Me</h1>
-      <center>THIS FORM IS NOT ACTIVE YET ! PLEASE DO NOT USE !</center>
-      <form class=" rounded-lg shadow-md space-y-6" id="contact-form" method="POST">
+      <form class="rounded-lg shadow-md space-y-6 p-6" id="contact-form" method="POST">
         <!-- Name Field -->
         <div>
-          <label for="name" class="block text-sm font-medium text-white-700">Name</label>
+          <h1 class="text-3xl font-bold text-center text-black dark:text-gray-300">Contact Me</h1>
+          <label for="name" class="block text-sm font-medium text-black dark:text-gray-300">Name</label>
           <input
             type="text"
             id="name"
             name="name"
-            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+            placeholder="John Doe"
+            class="mt-1 block w-full px-3 py-2 border border-gray-600 rounded-lg shadow-sm bg-[#232323] text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
             required
           />
         </div>
 
         <!-- Email Field -->
         <div>
-          <label for="email" class="block text-sm font-medium text-white-700">Email</label>
+          <label for="email" class="block text-sm font-medium text-black dark:text-gray-300">Email</label>
           <input
             type="email"
             id="email"
             name="email"
-            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+            placeholder="example@example.com"
+            class="mt-1 block w-full px-3 py-2 border border-gray-600 rounded-lg shadow-sm bg-[#232323] text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
             required
           />
         </div>
 
         <!-- Message Field -->
         <div>
-          <label for="message" class="block text-sm font-medium text-white-700">Message</label>
+          <label for="message" class="block text-sm font-medium text-black dark:text-gray-300">Message</label>
           <textarea
             id="message"
             name="message"
             rows="4"
-            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+            placeholder="Write your message here..."
+            class="mt-1 block w-full px-3 py-2 border border-gray-600 rounded-lg shadow-sm bg-[#232323] text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
             required
           ></textarea>
         </div>
+
+        <!-- Turnstile Widget -->
         <center>
-        <div class="checkbox mb-3">
-          <div class="cf-turnstile" data-sitekey={import.meta.env.PUBLIC_TURNSTILE_SITE_KEY} data-theme="dark"></div>
-        </div>
-      </center>
+          <div class="checkbox mb-3 mx-auto sm:mx-0 my-6 !h-[63px] !w-full *:w-[calc(100%+2px)] rounded-md overflow-hidden border border-gray-700 bg-[#1F2937] *:-m-[1px]" style="display: block; flex-flow: row;">
+            <div
+              class="cf-turnstile"
+              data-sitekey={import.meta.env.PUBLIC_TURNSTILE_SITE_KEY}
+              data-theme="dark"
+              data-callback="onTurnstileSuccess"
+              data-size="flexible"
+            ></div>
+          </div>
+        </center>
+
         <!-- Submit Button -->
         <div>
           <button
             type="submit"
-            class="w-full flex justify-center py-2 px-4 rounded truncate text-xs md:text-sm lg:text-base bg-black dark:bg-white text-white dark:text-black hover:opacity-75 blend"
+            id="submit-button"
+            disabled
+            class="w-full flex justify-center py-2 px-4 rounded truncate text-xs md:text-sm lg:text-base bg-black dark:bg-white text-white dark:text-black hover:opacity-75 blend cursor-not-allowed"
           >
             Send Message
           </button>
         </div>
       </form>
       <script>
+        // Enable the submit button when Turnstile is solved
+        window.onTurnstileSuccess = function () {
+          console.log("Turnstile success callback triggered!"); // Debugging log
+          const submitButton = document.getElementById('submit-button');
+          if (submitButton) {
+            submitButton.disabled = false; // Enable the button
+            submitButton.classList.remove('cursor-not-allowed'); // Remove disabled styling
+            submitButton.classList.add('hover:bg-indigo-700'); // Add hover effect
+          } else {
+            console.error("Submit button not found!");
+          }
+        };
+
+        // Handle form submission
         document.getElementById('contact-form').addEventListener('submit', async (e) => {
           e.preventDefault(); // Prevent the default form submission
-      
+
           // Serialize form data
           const formData = new FormData(e.target);
-      
+
           try {
             // Send the form data to your backend
             const response = await fetch('/api/submit-form', {
               method: 'POST',
               body: formData,
             });
-      
+
             // Parse the JSON response
             const result = await response.json();
-      
+
             if (result.success) {
               // Success: Notify the user and reset the form
               alert('Form submitted successfully!');
               e.target.reset(); // Clear the form fields
+              document.getElementById('submit-button').disabled = true; // Disable the button again
             } else {
               // Failure: Notify the user with the error message
               alert(`Verification failed: ${result.message || 'Unknown error'}`);
@@ -90,6 +118,7 @@ import PageLayout from '@layouts/PageLayout.astro';
           }
         });
       </script>
+      <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     </div>
   </div>
 </PageLayout>
