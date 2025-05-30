@@ -2,7 +2,7 @@
 title: "New project on the road : Free and secure Highly-Available Kubernetes cluster in the cloud"
 summary: "A new project coming soon, installation, updates and code in blog articles"
 date: "May 30 2025"
-draft: true
+draft: false
 tags:
 - CICD
 - Cloud
