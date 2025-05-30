@@ -20,7 +20,7 @@ I wanted to test a new kind of experiment and lab that could be available for ev
 
 I will split the articles in different parts :
 
-1. The choice of the cloud Provider - Oracle Cloud, Always Free Plan (Pros and Cons)
+1. The choice of the Cloud Provider - Oracle Cloud, Always Free Plan (Pros and Cons)
 2. The choice of the OS and Kubernetes distribution - Kairos OS Alpine Version with k0s (For MAXIMUM performances with limited ressources)
 3. Install a Highly-Available cluster with Kairos OS and k0s on Oracle Cloud using Terraform / OpenTofu
 4. Secure Kairos OS according to the NIST's recommendations in the Application Container Security Guide
