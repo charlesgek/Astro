@@ -18,6 +18,6 @@ export default defineConfig({
     platformProxy: {
       enabled: true,
       configPath: "wrangler.toml",
-    },
-  }),
+    }
+  })
 });
