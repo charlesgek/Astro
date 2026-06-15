@@ -36,8 +36,6 @@
     "yaml": "2.9.0",
     "undici" : "^7.25.0",
     "esbuild" : "^0.28.1",
-    "astro": "5.18.2",
-    "@astrojs/mdx": "4.3.14",
     "ws" : "8.21.0"
   },
   "devDependencies": {
