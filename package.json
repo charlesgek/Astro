@@ -13,7 +13,7 @@
     "@astrojs/check": "^0.9.9",
     "@astrojs/cloudflare": "^12.6.13",
     "@astrojs/language-server": "^2.16.10",
-    "@astrojs/mdx": "6.0.3",
+    "@astrojs/mdx": "4.3.14",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.3",
     "@astrojs/solid-js": "^6.0.1",
@@ -37,7 +37,7 @@
     "undici" : "^7.25.0",
     "esbuild" : "^0.28.1",
     "astro": "5.18.2",
-    "@astrojs/mdx": "6.0.3",
+    "@astrojs/mdx": "4.3.14",
     "ws" : "8.21.0"
   },
   "devDependencies": {
