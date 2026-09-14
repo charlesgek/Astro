@@ -1,11 +1,11 @@
 // src/pages/api/submit-form.js
 import { Resend } from "resend";
 
-export const POST = async ({ request, env }) => {
+export const POST = async ({ request, locals }) => {
   try {
     // Access the secret keys from environment variables
-    const turnstileSecretKey = import.meta.env.TURNSTILE_SECRET;
-    const resendApiKey = import.meta.env.SECRET_RESEND_API_KEY;
+    const turnstileSecretKey = locals.runtime.env.TURNSTILE_SECRET;
+    const resendApiKey = locals.runtime.env.SECRET_RESEND_API_KEY;
 
     console.log("Turnstile Secret Key via env:", turnstileSecretKey);
     console.log("Resend API Key via env:", resendApiKey);
