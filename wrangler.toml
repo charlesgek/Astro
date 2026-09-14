@@ -1,11 +1,12 @@
 name = "charlesgek-com"
 compatibility_date = "2025-03-01"
-pages_build_output_dir = "dist"
+main = "./dist/server/entry.mjs"
 
 [vars]
 PUBLIC_TURNSTILE_SITE_KEY = "0x4AAAAAAASAYgSU4eUBrEgL"
 NODE_VERSION = "v24.16.0"
 
 [assets]
-binding = "STATIC_ASSETS"
 directory = "./dist/client"
+binding = "ASSETS"
+not_found_handling = "404-page"
