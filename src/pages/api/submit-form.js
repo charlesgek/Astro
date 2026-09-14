@@ -4,7 +4,7 @@ import { Resend } from "resend";
 export const POST = async ({ request, env }) => {
   try {
     // Access the secret keys from environment variables
-    const turnstileSecretKey = import.meta.env.SECRET_TURNSTILE_SECRET_TOKEN;
+    const turnstileSecretKey = import.meta.env.TURNSTILE_SECRET;
     const resendApiKey = import.meta.env.SECRET_RESEND_API_KEY;
 
     console.log("Turnstile Secret Key via env:", turnstileSecretKey);
