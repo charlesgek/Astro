@@ -25,6 +25,7 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), solidJs()],
   output: "server",
   adapter: cloudflare({
+    session: false,
     platformProxy: {
       enabled: true,
       configPath: "wrangler.toml",
