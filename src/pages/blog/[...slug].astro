@@ -1,4 +1,6 @@
 ---
+export const prerender = false;
+
 import { getCollection, render } from "astro:content";
 import { readingTime } from "@lib/utils";
 import PageLayout from "@layouts/PageLayout.astro";
@@ -7,19 +9,21 @@ import BottomLayout from "@layouts/BottomLayout.astro";
 import ArticleTopLayout from "@layouts/ArticleTopLayout.astro";
 import ArticleBottomLayout from "@layouts/ArticleBottomLayout.astro";
 
-export async function getStaticPaths() {
-  const posts = await getCollection("blog");
-  return posts.map((post) => ({
-    params: { slug: post.id },
-    props: {
-      post,
-      readingTimeText: readingTime(post.body ?? ""),
-    },
-  }));
+const { slug } = Astro.params;
+
+if (!slug) {
+  return Astro.rewrite("/404");
 }
 
-const { post, readingTimeText } = Astro.props;
+const posts = await getCollection("blog");
+const post = posts.find((p) => p.id === slug);
+
+if (!post) {
+  return Astro.rewrite("/404");
+}
+
 const { title, summary } = post.data;
+const readingTimeText = readingTime(post.body ?? "");
 ---
 
 <PageLayout title={title} description={summary}>
