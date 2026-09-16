@@ -4,7 +4,7 @@ main = "@astrojs/cloudflare/entrypoints/server"
 
 [vars]
 PUBLIC_TURNSTILE_SITE_KEY = "0x4AAAAAAASAYgSU4eUBrEgL"
-NODE_VERSION = "v24.16.0"
+NODE_VERSION = "v24.21.0"
 
 [assets]
 directory = "./dist/client"

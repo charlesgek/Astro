@@ -11,34 +11,35 @@
   "dependencies": {
     "astro": "7.3.2",
     "@astrojs/check": "^0.9.10",
-    "@astrojs/cloudflare": "^14.3.1",
-    "@astrojs/language-server": "^2.16.16",
+    "@astrojs/cloudflare": "14.3.1",
+    "@astrojs/language-server": "2.16.16",
     "@astrojs/mdx": "8.0.1",
-    "@astrojs/rss": "^4.0.19",
-    "@astrojs/sitemap": "^3.7.4",
-    "@astrojs/solid-js": "^7.0.2",
-    "@astrojs/ts-plugin": "^1.10.11",
-    "@tailwindcss/typography": "^0.5.20",
-    "@tailwindcss/vite": "^4.3.3",
-    "clsx": "^2.1.1",
-    "esbuild-plugin-solid" : "0.6.0",
-    "fuse.js": "^7.5.0",
-    "resend": "^6.28.0",
-    "sharp": "^0.35.4",
-    "tailwind-merge": "^3.7.0",
-    "tailwindcss": "^4.3.3",
-    "volar-service-yaml": "^0.0.71",
+    "@astrojs/rss": "4.0.19",
+    "@astrojs/sitemap": "3.7.4",
+    "@astrojs/solid-js": "7.0.2",
+    "@astrojs/ts-plugin": "1.10.11",
+    "@tailwindcss/typography": "0.5.20",
+    "@tailwindcss/vite": "4.3.3",
+    "clsx": "2.1.1",
+    "esbuild": "0.28.2",
+    "esbuild-plugin-solid": "0.6.0",
+    "fuse.js": "7.5.0",
+    "resend": "6.28.0",
+    "sharp": "0.35.4",
+    "tailwind-merge": "3.7.0",
+    "tailwindcss": "4.3.3",
+    "vite": "8.3.0",
+    "volar-service-yaml": "0.0.71",
+    "ws": "8.21.3",
     "yaml": "2.9.1",
-    "yaml-language-server": "^1.24.0"
-  },
-  "overrides": {
-    "esbuild" : "0.28.1",
-    "yaml": "2.9.1",
-    "undici" : "^7.25.0",
-    "vite" : "8.3.0",
-    "ws" : "8.21.0"
+    "yaml-language-server": "1.24.0"
   },
   "devDependencies": {
-    "wrangler": "^4.131.2"
+    "wrangler": "4.132.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "esbuild@0.28.1": true,
+    "workerd@1.20260915.1": true
   }
 }
