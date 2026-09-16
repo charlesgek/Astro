@@ -1,28 +1,22 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import TopLayout from "@layouts/TopLayout.astro";
 import BottomLayout from "@layouts/BottomLayout.astro";
 import ArticleTopLayout from "@layouts/ArticleTopLayout.astro";
 import ArticleBottomLayout from "@layouts/ArticleBottomLayout.astro";
 
-// Get the slug from the URL
-const { slug } = Astro.params;
-
-// Fetch all projects from the "projects" collection
-const projects = await getCollection("projects");
-
-// Find the project that matches the slug
-const project = projects.find((p) => p.slug === slug);
-
-// Validate the project
-if (!project || !project.data) {
-  throw new Error(`No project found for slug: ${slug}`);
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
 }
 
+const { project } = Astro.props;
+const { Content } = await render(project);
 const { title, summary } = project.data;
-
-console.log("Project Data:", project.data); // Debugging
 ---
 
 <PageLayout title={title} description={summary}>
@@ -33,7 +27,9 @@ console.log("Project Data:", project.data); // Debugging
   </TopLayout>
   <BottomLayout>
     <div class="animate">
-      <ArticleBottomLayout entry={project} />
+      <article class="prose dark:prose-invert">
+        <Content />
+      </article>
     </div>
   </BottomLayout>
 </PageLayout>
