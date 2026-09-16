@@ -1,7 +1,7 @@
 ---
 company: "xxx"
 role: "xx"
-dateStart: "01/01/1970"
+dateStart: "1970-01-01"
 dateEnd: "now"
 ---
 <center>
