@@ -35,11 +35,11 @@
     "yaml-language-server": "1.24.0"
   },
   "devDependencies": {
-    "wrangler": "4.134.0"
+    "wrangler": "4.136.1"
   },
   "allowScripts": {
     "esbuild@0.28.2": true,
     "esbuild@0.28.1": true,
-    "workerd@1.20260917.1": true
+    "workerd@1.20260921.1": true
   }
 }
