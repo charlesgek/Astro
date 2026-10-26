@@ -37,6 +37,9 @@
   "devDependencies": {
     "wrangler": "4.152.0"
   },
+    "overrides": {
+    "undici": "8.12.3"
+  },
   "allowScripts": {
     "esbuild@0.28.2": true,
     "workerd@1.20261019.1": true
